@@ -225,7 +225,7 @@ PRIVATE HTWildMatch * match ARGS2(HTPattern *,	pat,
 	    int len = strlen(pat->text);
 	    char * cur = HTRuleCaseSense
 		? strstr((char*)act,pat->text)
-		: strcasestr((char*)act,pat->text);
+		: w3c_strcasestr((char*)act,pat->text);
 
 	    while (cur) {
 		HTWildMatch * m = match(pat->next,cur+len);
@@ -242,7 +242,7 @@ PRIVATE HTWildMatch * match ARGS2(HTPattern *,	pat,
 		if (HTRuleCaseSense)
 		    cur = strstr(cur+len,pat->text);
 		else
-		    cur = strcasestr(cur+len,pat->text);
+		    cur = w3c_strcasestr(cur+len,pat->text);
 	    }
 	    return NULL;	/* Required string not found */
 	}

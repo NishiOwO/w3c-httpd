@@ -30,8 +30,8 @@ Case-insensitive string inside another string
    
  */
 
-//PUBLIC char * strcasestr PARAMS((char * s1,
-//                                 char * s2));
+PUBLIC char * w3c_strcasestr PARAMS((char * s1,
+                                     char * s2));
 
 /*
 

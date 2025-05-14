@@ -59,11 +59,10 @@ PUBLIC int strncasecomp ARGS3(CONST char*,a, CONST char *,b, int,n)
 
 
 /*
- * strcasestr(s1,s2) -- like strstr(s1,s2) but case-insensitive.
+ * w3c_strcasestr(s1,s2) -- like strstr(s1,s2) but case-insensitive.
  */
-/*
-PUBLIC char * strcasestr ARGS2(char *,	s1,
-			       char *,	s2)
+PUBLIC char * w3c_strcasestr ARGS2(char *,	s1,
+		    	           char *,	s2)
 {
     char * try = s1;
 
@@ -90,7 +89,7 @@ PUBLIC char * strcasestr ARGS2(char *,	s1,
 	   "Debug....... strcasestr(s1 = \"%s\", s2 = \"%s\") => No match\n",
 	   s1,s2);
     return NULL;
-}*/
+}
 
 
 
