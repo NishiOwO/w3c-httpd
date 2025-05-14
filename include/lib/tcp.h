@@ -41,6 +41,7 @@
 #include <stdlib.h>
 #include <sys/stat.h>
 #include <errno.h>
+#include <time.h>
 
 #if defined(__unix__)
 #include <sys/socket.h>
