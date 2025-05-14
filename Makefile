@@ -1,7 +1,10 @@
+VC = 2.17
+VD = 3.0A+nishi
+
 PREFIX = /usr/w3c
 CC = gcc
 AR = ar
-CFLAGS = -Iinclude/lib -Iinclude/daemon -DVD='"3.0A"' -D_DEFAULT_SOURCE -DPREFIX='"$(PREFIX)"'
+CFLAGS = -Iinclude/lib -Iinclude/daemon -DVC='"$(VC)"' -DVD='"$(VD)"' -D_DEFAULT_SOURCE -DPREFIX='"$(PREFIX)"'
 LDFLAGS =
 LIBS = -lcrypt
 
