@@ -1,6 +1,6 @@
 CC = gcc
 AR = ar
-CFLAGS = -Iinclude/lib -Iinclude/daemon -DVD='"3.0A"'
+CFLAGS = -Iinclude/lib -Iinclude/daemon -DVD='"3.0A"' -D_DEFAULT_SOURCE
 LDFLAGS =
 LIBS = -lcrypt
 
