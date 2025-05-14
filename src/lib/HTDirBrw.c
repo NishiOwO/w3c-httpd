@@ -112,7 +112,7 @@ typedef enum _HTShowLength {                        /* Width of each collumn */
     HT_LENGTH_OWNER = 8,
     HT_LENGTH_GROUP = 8,
     HT_LENGTH_SIZE  = 6,
-    HT_LENGTH_DATE  = 15,
+    HT_LENGTH_DATE  = 17,
     HT_LENGTH_SPACE = 1
 } HTShowLength;
 
@@ -987,14 +987,14 @@ PUBLIC int HTBrowseDirectory ARGS2(HTRequest *, req, char *, directory)
 #if defined(Mips) || (defined(VMS) && !defined(DECC))
 		    struct tm * t = localtime(&file_info.st_mtime);
 
-		    sprintf(bodyptr,"%02d-%s-%02d %02d:%02d",
+		    sprintf(bodyptr,"%02d-%s-%04d %02d:%02d",
 			    t->tm_mday,
 			    months[t->tm_mon],
-			    t->tm_year % 100,
+			    t->tm_year % 10000,
 			    t->tm_hour,
 			    t->tm_min);
 #else
-		    strftime(bodyptr, HT_LENGTH_DATE+1, "%d-%b-%y %H:%M",
+		    strftime(bodyptr, HT_LENGTH_DATE+1, "%d-%b-%Y %H:%M",
 			     localtime(&file_info.st_mtime));
 #endif /* Mips || (VMS && !DECC) */
 		    bodyptr += HT_LENGTH_DATE;
@@ -1258,14 +1258,14 @@ PUBLIC int HTFTPBrowseDirectory ARGS3(HTRequest *, req, char *, directory,
 #if defined(Mips) || (defined(VMS) && !defined(DECC))
 			struct tm * t = localtime(&file_info.f_mtime);
 
-			sprintf(bodyptr,"%02d-%s-%02d %02d:%02d",
+			sprintf(bodyptr,"%02d-%s-%04d %02d:%02d",
 				t->tm_mday,
 				months[t->tm_mon],
-				t->tm_year % 100,
+				t->tm_year % 10000,
 				t->tm_hour,
 				t->tm_min);
 #else
-			strftime(bodyptr, HT_LENGTH_DATE+1, "%d-%b-%y %H:%M",
+			strftime(bodyptr, HT_LENGTH_DATE+1, "%d-%b-%Y %H:%M",
 				 localtime(&file_info.f_mtime));
 #endif /* Mips || (VMS && !DECC) */
 		    } else {
