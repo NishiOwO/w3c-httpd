@@ -95,7 +95,7 @@
 #ifdef VMS
 #define RULE_FILE               "httpd_dir:httpd.conf"
 #else /* not VMS */
-#define RULE_FILE               "/etc/httpd.conf"
+#define RULE_FILE               PREFIX "/etc/httpd.conf"
 #endif /* not VMS */
 #endif
 

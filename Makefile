@@ -1,6 +1,7 @@
+PREFIX =
 CC = gcc
 AR = ar
-CFLAGS = -Iinclude/lib -Iinclude/daemon -DVD='"3.0A"' -D_DEFAULT_SOURCE
+CFLAGS = -Iinclude/lib -Iinclude/daemon -DVD='"3.0A"' -D_DEFAULT_SOURCE -DPREFIX='"$(PREFIX)"'
 LDFLAGS =
 LIBS = -lcrypt
 
