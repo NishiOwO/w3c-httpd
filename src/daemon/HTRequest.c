@@ -506,7 +506,7 @@ PUBLIC char * HTRedirectionMsg ARGS1(char *, url)
 	    url,
 	    "\">elsewhere.</A><P>\nYou see this message because your browser ",
 	    "doesn't support automatic\nredirection handeling. <P>\n<HR>\n",
-	    "<ADDRESS><A HREF=\"http://www.w3.org\">",
+	    "<ADDRESS><A HREF=\"http://www.w3.org/Daemon\">",
 	    HTAppName,
 	    HTAppVersion,
 	    "</A></ADDRESS>\n</BODY>\n</HTML>\n");

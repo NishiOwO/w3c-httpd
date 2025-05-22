@@ -1053,7 +1053,7 @@ PUBLIC int HTLoadError ARGS3(HTRequest *,       req,
 		    num, (msg ? msg : ""));
 
 	    sprintf(buf + strlen(buf),"\n<P><HR>%s%s %s%s\n</BODY>\n</HTML>\n",
-		    "<ADDRESS><A HREF=\"http://www.w3.org\">",
+		    "<ADDRESS><A HREF=\"http://www.w3.org/Daemon\">",
 		    HTAppName,
 		    HTAppVersion,
 		    "</A></ADDRESS>");
@@ -1209,7 +1209,7 @@ PUBLIC void HTErrorMsg ARGS1(HTRequest *, req)
 
   output_errors:
     s += strlen(s);
-    strcat(s, "\n<P><HR>\n<ADDRESS><A HREF=\"http://www.w3.org\">\n ");
+    strcat(s, "\n<P><HR>\n<ADDRESS><A HREF=\"http://www.w3.org/Daemon\">\n ");
     strcat(s, HTAppName);
     strcat(s, HTAppVersion);
     strcat(s, "</A></ADDRESS>\n</BODY>\n</HTML>\n");
