@@ -163,6 +163,7 @@ PUBLIC void HTFileInit NOARGS
     HTAddType(".xpm",    "image/x-xpixmap",		"binary", 1.0);	/* X pixmap format	*/
     HTAddType(".xwd",    "image/x-xwindowdump",		"binary", 1.0);	/* X window dump (xwd)	*/
     HTAddType(".html",   "text/html",			"8bit",   1.0);	/* HTML			*/
+    HTAddType(".css",    "text/css",			"8bit",   1.0);	/* CSS			*/
     HTAddType(".c",      "text/plain",			"7bit",   0.5);	/* C source		*/
     HTAddType(".h",      "text/plain",			"7bit",   0.5);	/* C headers		*/
     HTAddType(".C",      "text/plain",			"7bit",   0.5);	/* C++ source		*/
