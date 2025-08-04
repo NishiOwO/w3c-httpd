@@ -197,12 +197,12 @@ PRIVATE char * log_time NOARGS
     else {
 	gorl = localtime(&cur_time);
 /* have tm_gmtoff */
-#if defined(SIGTSTP) && !defined(AIX) && !defined(__sgi) && !defined(_AUX) && !defined(__svr4__)
+#if defined(SIGTSTP) && !defined(AIX) && !defined(__sgi) && !defined(_AUX) && !defined(__svr4__)  && !defined(__CYGWIN__)
 	z = gorl->tm_gmtoff/60;
 
 #else /* SysV or VMS */					
 
-#ifdef VMS
+#if defined(VMS) || defined(__CYGWIN__)
 	z = 0;
 
 #else  /* SysV */

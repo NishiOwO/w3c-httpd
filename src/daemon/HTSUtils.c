@@ -156,7 +156,7 @@ PUBLIC time_t parse_http_time ARGS1(char *, str)
      *	What a pain it is to get the timezone correctly.
      */
 
-#if defined(sun) && !defined(__svr4__)
+#if defined(__CYGWIN__) || (defined(sun) && !defined(__svr4__))
     t = timegm(&tm);
 #else /* not sun, except svr4 */
 

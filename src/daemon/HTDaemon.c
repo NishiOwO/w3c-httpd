@@ -2719,7 +2719,7 @@ PRIVATE int daemon_start NOARGS
     */
 #ifdef SIGTSTP  /* BSD */
 
-#if defined(__svr4__) || defined(_POSIX_SOURCE) || defined(__hpux)
+#if defined(__svr4__) || defined(_POSIX_SOURCE) || defined(__hpux) || defined(__CYGWIN__)
     pgrp = setsid();
 #else
     pgrp = setpgrp(0, getpid());

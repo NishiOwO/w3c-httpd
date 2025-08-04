@@ -1,6 +1,7 @@
 VC = 2.17
 VD = 3.0A+nishi
 
+DESTDIR = 
 PREFIX = /usr/w3c
 CC = gcc
 AR = ar
@@ -73,20 +74,20 @@ clean:
 	rm -f libwww.a httpd$(EXEC) htadm$(EXEC) cgiparse$(EXEC) cgiutils$(EXEC) htimage$(EXEC) src/*/*.o
 
 install: all
-	mkdir -p $(PREFIX)/
-	mkdir -p $(PREFIX)/bin
-	mkdir -p $(PREFIX)/etc
-	mkdir -p $(PREFIX)/icons
+	mkdir -p $(DESTDIR)/$(PREFIX)/
+	mkdir -p $(DESTDIR)/$(PREFIX)/bin
+	mkdir -p $(DESTDIR)/$(PREFIX)/etc
+	mkdir -p $(DESTDIR)/$(PREFIX)/icons
 	cd root/icons && for i in *; do \
-		if [ '!' -f $(PREFIX)/icons/$$i ]; then \
-			cp $$i $(PREFIX)/icons/ ; \
+		if [ '!' -f $(DESTDIR)/$(PREFIX)/icons/$$i ]; then \
+			cp $$i $(DESTDIR)/$(PREFIX)/icons/ ; \
 		fi ; \
 	done
 	cd root/config && for i in *; do \
-		if [ '!' -f $(PREFIX)/etc/$$i ]; then \
-			cp $$i $(PREFIX)/etc/ ; \
+		if [ '!' -f $(DESTDIR)/$(PREFIX)/etc/$$i ]; then \
+			cp $$i $(DESTDIR)/$(PREFIX)/etc/ ; \
 		fi ; \
 	done
 	for i in httpd$(EXEC) htadm$(EXEC) cgiparse$(EXEC) cgiutils$(EXEC) htimage$(EXEC); do \
-		cp $$i $(PREFIX)/bin/ ; \
+		cp $$i $(DESTDIR)/$(PREFIX)/bin/ ; \
 	done
